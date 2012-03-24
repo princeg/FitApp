@@ -1,0 +1,12 @@
+source "http://rubygems.org"
+
+gem "rake"
+gem "sinatra"
+gem "settings"
+gem "rest-client"
+gem "json"
+gem "sequel"
+
+group :development do
+  gem "sqlite3"
+end

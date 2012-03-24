@@ -1,0 +1,11 @@
+# 
+# Copy this file to settings.yml and update with your application specific
+# settings
+# 
+development:
+  :client_id: "Your_Client_ID"                 # See https://att.mhealth.com/dev/apps
+  :client_secret: "YourClientSecret"           # See https://att.mhealth.com/dev/apps
+  :mhealth_connect: "mhealth.att.com"          # mHealth Connect endpoint (probably won't change)
+  :mhealth_api: "http://api.dev.tfoundry.com/" # mHealth API endpoint (probably won't change)
+  :redirect_uri: "http://localhost:9292/auth/callback" # Redirect URI to pass to mHealth Connect when user authorizes
+  :database: "sqlite://slumberscore.db"        # Connecting string for your database http://sequel.rubyforge.org/rdoc/classes/Sequel.html#method-c-connect

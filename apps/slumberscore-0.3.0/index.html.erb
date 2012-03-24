@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Slumber Score</title>
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="icon" href="/images/slumber-score.png" type="image/png">
+  <link rel="apple-touch-icon-precomposed" href="/images/slumber-score.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/client/icon/slumber-score.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/client/icon/slumber-score.png">
+  
+  <link rel="stylesheet" href="/css/slumberscore.css" type="text/css">
+</head>
+<body style="background: #000 url('/images/loading.png') bottom center no-repeat; background-size: auto 100%;">
+  <script type="text/javascript" src="/javascript/vendor/sencha-touch.1.1.0.js"></script>
+  
+  <script type="text/javascript" src="/javascript/app/app.js"></script>
+  
+  <script type="text/javascript">
+    <% if session[:access_token] %>
+    SlumberScore.access_token = '<%= session[:access_token] %>';
+    <% end %>
+    SlumberScore.mHealth = '<%= SlumberScore.setting(:mhealth_connect) %>';
+    SlumberScore.mHealthAPI = '<%= SlumberScore.setting(:mhealth_api) %>';
+    SlumberScore.mHealthConnect = '<%= "https://#{SlumberScore.setting(:mhealth_connect)}/mobile/auth?client_id=#{SlumberScore.setting(:client_id)}&response_type=code&redirect_uri=#{encode_url(SlumberScore.setting(:redirect_uri))}&scope=#{encode_url("/read/health/data/myzeo /read/health/user")}" %>';
+    <% if @user %>
+    SlumberScore.profileData = <%= @user.to_json %>;
+    <% end %>
+  </script>
+  
+  <script type="text/javascript" src="/javascript/app/Viewport.js"></script>
+  <script type="text/javascript" src="/javascript/app/Score.js"></script>
+  <script type="text/javascript" src="/javascript/app/MainView.js"></script>
+  <script type="text/javascript" src="/javascript/app/ChartView.js"></script>
+  <script type="text/javascript" src="/javascript/app/SignInView.js"></script>
+  <script type="text/javascript" src="/javascript/app/ScoresController.js"></script>
+</body>
+</html>
