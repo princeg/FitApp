@@ -48,10 +48,8 @@ public class Example extends Activity {
 
     private LoginButton mLoginButton;
     private TextView mText;
-    private Button mRequestButton;
     private Button mPostButton;
     private Button mDeleteButton;
-    private Button mUploadButton;
 
     private Facebook mFacebook;
     private AsyncFacebookRunner mAsyncRunner;
@@ -69,10 +67,8 @@ public class Example extends Activity {
         setContentView(R.layout.main);
         mLoginButton = (LoginButton) findViewById(R.id.login);
         mText = (TextView) Example.this.findViewById(R.id.txt);
-        mRequestButton = (Button) findViewById(R.id.requestButton);
         mPostButton = (Button) findViewById(R.id.postButton);
         mDeleteButton = (Button) findViewById(R.id.deletePostButton);
-        mUploadButton = (Button) findViewById(R.id.uploadButton);
 
        	mFacebook = new Facebook(APP_ID);
        	mAsyncRunner = new AsyncFacebookRunner(mFacebook);
@@ -81,50 +77,6 @@ public class Example extends Activity {
         SessionEvents.addAuthListener(new SampleAuthListener());
         SessionEvents.addLogoutListener(new SampleLogoutListener());
         mLoginButton.init(this, mFacebook);
-
-        mRequestButton.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-            	mAsyncRunner.request("me", new SampleRequestListener());
-            }
-        });
-        mRequestButton.setVisibility(mFacebook.isSessionValid() ?
-                View.VISIBLE :
-                View.INVISIBLE);
-
-        mUploadButton.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                Bundle params = new Bundle();
-                params.putString("method", "photos.upload");
-
-                URL uploadFileUrl = null;
-                try {
-                    uploadFileUrl = new URL(
-                        "http://www.facebook.com/images/devsite/iphone_connect_btn.jpg");
-                } catch (MalformedURLException e) {
-                	e.printStackTrace();
-                }
-                try {
-                    HttpURLConnection conn= (HttpURLConnection)uploadFileUrl.openConnection();
-                    conn.setDoInput(true);
-                    conn.connect();
-                    int length = conn.getContentLength();
-
-                    byte[] imgData =new byte[length];
-                    InputStream is = conn.getInputStream();
-                    is.read(imgData);
-                    params.putByteArray("picture", imgData);
-
-                } catch  (IOException e) {
-                    e.printStackTrace();
-                }
-
-                mAsyncRunner.request(null, params, "POST",
-                        new SampleUploadListener(), null);
-            }
-        });
-        mUploadButton.setVisibility(mFacebook.isSessionValid() ?
-                View.VISIBLE :
-                View.INVISIBLE);
 
         mPostButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -147,8 +99,6 @@ public class Example extends Activity {
 
         public void onAuthSucceed() {
             mText.setText("You have logged in! ");
-            mRequestButton.setVisibility(View.VISIBLE);
-            mUploadButton.setVisibility(View.VISIBLE);
             mPostButton.setVisibility(View.VISIBLE);
         }
 
@@ -164,8 +114,6 @@ public class Example extends Activity {
 
         public void onLogoutFinish() {
             mText.setText("You have logged out! ");
-            mRequestButton.setVisibility(View.INVISIBLE);
-            mUploadButton.setVisibility(View.INVISIBLE);
             mPostButton.setVisibility(View.INVISIBLE);
         }
     }
