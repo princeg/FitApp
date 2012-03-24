@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\Users\\exingbo\\workspace\\PhoneGapPluginSampleApp\\src\\com\\dsi\\ant\\IServiceSettings.aidl
+ * Original file: C:\\Hackathon\\FitApp\\apps\\MyWeight-v1\\PhoneGapPluginSampleApp\\src\\com\\dsi\\ant\\IServiceSettings.aidl
  */
 package com.dsi.ant;
 /**
