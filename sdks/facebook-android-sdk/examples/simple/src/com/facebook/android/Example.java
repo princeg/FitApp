@@ -50,7 +50,10 @@ public class Example extends Activity {
     private TextView mText;
     private Button mPostButton;
     private Button mDeleteButton;
+    private Button mNext;
 
+    private Intent nextScreen;
+    
     private Facebook mFacebook;
     private AsyncFacebookRunner mAsyncRunner;
 
@@ -63,13 +66,14 @@ public class Example extends Activity {
             Util.showAlert(this, "Warning", "Facebook Applicaton ID must be " +
                     "specified before running this example: see Example.java");
         }
-
+       
         setContentView(R.layout.main);
         mLoginButton = (LoginButton) findViewById(R.id.login);
         mText = (TextView) Example.this.findViewById(R.id.txt);
         mPostButton = (Button) findViewById(R.id.postButton);
         mDeleteButton = (Button) findViewById(R.id.deletePostButton);
-
+        mNext = (Button) findViewById(R.id.next);
+        
        	mFacebook = new Facebook(APP_ID);
        	mAsyncRunner = new AsyncFacebookRunner(mFacebook);
 
@@ -87,6 +91,16 @@ public class Example extends Activity {
         mPostButton.setVisibility(mFacebook.isSessionValid() ?
                 View.VISIBLE :
                 View.INVISIBLE);
+        
+        mNext.setOnClickListener(new View.OnClickListener() { 
+            public void onClick(View arg0) {
+                //Starting a new Intent
+                nextScreen = new Intent(getApplicationContext(), Welcome.class); 
+                //Sending data to another Activity
+                startActivity(nextScreen); 
+            }
+        });
+        //mNext.setVisibility(View.VISIBLE);
     }
 
     @Override
