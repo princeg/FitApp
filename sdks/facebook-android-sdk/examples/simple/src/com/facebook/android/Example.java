@@ -42,7 +42,9 @@ public class Example extends Activity {
 
     // Your Facebook Application ID must be set before running this example
     // See http://www.facebook.com/developers/createapp.php
-    public static final String APP_ID = "175729095772478";
+    //public static final String APP_ID = "175729095772478";
+	public static final String APP_ID = "266363540115987";
+	
 
     private LoginButton mLoginButton;
     private TextView mText;
