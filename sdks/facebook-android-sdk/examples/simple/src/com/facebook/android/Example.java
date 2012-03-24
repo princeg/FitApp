@@ -50,11 +50,6 @@ public class Example extends Activity {
     private TextView mText;
     private Button mPostButton;
     private Button mDeleteButton;
-    private Button mMenu;
-    private Button mWelcome;
-
-    private Intent nextScreen;
-    
     private Facebook mFacebook;
     private AsyncFacebookRunner mAsyncRunner;
 
@@ -71,10 +66,7 @@ public class Example extends Activity {
         setContentView(R.layout.main);
         mLoginButton = (LoginButton) findViewById(R.id.login);
         mText = (TextView) Example.this.findViewById(R.id.txt);
-        mPostButton = (Button) findViewById(R.id.postButton);
-        mDeleteButton = (Button) findViewById(R.id.deletePostButton);
-        mMenu = (Button) findViewById(R.id.menu);
-        mWelcome = (Button) findViewById(R.id.welcome);
+        mPostButton = (Button) findViewById(R.id.postButton);        
         
        	mFacebook = new Facebook(APP_ID);
        	mAsyncRunner = new AsyncFacebookRunner(mFacebook);
@@ -94,32 +86,32 @@ public class Example extends Activity {
                 View.VISIBLE :
                 View.INVISIBLE);
         
-        mMenu.setOnClickListener(new View.OnClickListener() { 
-            public void onClick(View arg0) {
-                //Starting a new Intent
-                nextScreen = new Intent(getApplicationContext(), Welcome.class); 
-                //Sending data to another Activity
-                startActivity(nextScreen); 
-            }
-        });
-        
-        mMenu.setOnClickListener(new View.OnClickListener() { 
-            public void onClick(View arg0) {
-                //Starting a new Intent
-                nextScreen = new Intent(getApplicationContext(), Menu.class); 
-                //Sending data to another Activity
-                startActivity(nextScreen); 
-            }
-        });
-        
-        mWelcome.setOnClickListener(new View.OnClickListener() { 
-            public void onClick(View arg0) {
-                //Starting a new Intent
-                nextScreen = new Intent(getApplicationContext(), Welcome.class); 
-                //Sending data to another Activity
-                startActivity(nextScreen); 
-            }
-        });
+//        mMenu.setOnClickListener(new View.OnClickListener() { 
+//            public void onClick(View arg0) {
+//                //Starting a new Intent
+//                nextScreen = new Intent(getApplicationContext(), Welcome.class); 
+//                //Sending data to another Activity
+//                startActivity(nextScreen); 
+//            }
+//        });
+//        
+//        mMenu.setOnClickListener(new View.OnClickListener() { 
+//            public void onClick(View arg0) {
+//                //Starting a new Intent
+//                nextScreen = new Intent(getApplicationContext(), Menu.class); 
+//                //Sending data to another Activity
+//                startActivity(nextScreen); 
+//            }
+//        });
+//        
+//        mWelcome.setOnClickListener(new View.OnClickListener() { 
+//            public void onClick(View arg0) {
+//                //Starting a new Intent
+//                nextScreen = new Intent(getApplicationContext(), Welcome.class); 
+//                //Sending data to another Activity
+//                startActivity(nextScreen); 
+//            }
+//        });
     }
 
     @Override
