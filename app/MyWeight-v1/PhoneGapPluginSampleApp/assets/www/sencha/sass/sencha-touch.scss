@@ -1,0 +1,24 @@
+$include-default-icons:false;
+$toolbar-gradient: 'glossy';
+
+@import 'sencha-touch/default/all';
+@include sencha-panel;
+@include sencha-buttons;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-indexbar;
+@include sencha-list;
+@include sencha-list-pullrefresh;
+@include sencha-layout;
+.x-toolbar .x-toolbar-title
+{
+	font-size:24px;
+	color: saturate(lighten(#5c5b5b, 10%), 20%);
+	font-weight:600;
+}
+@include sencha-form;
+@include sencha-loading-spinner;
+@include sencha-toolbar-ui('orange', #277095, 'glossy');
+@include sencha-toolbar-ui('white', #ffffff, 'matte');
+@include sencha-button-ui('blue',#7992b5,'glossy');
+@include sencha-button-ui('purple',#a5afb5,'glossy');
