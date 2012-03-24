@@ -100,7 +100,6 @@ public class Example extends Activity {
                 startActivity(nextScreen); 
             }
         });
-        //mNext.setVisibility(View.VISIBLE);
     }
 
     @Override
