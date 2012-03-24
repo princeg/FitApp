@@ -14,7 +14,17 @@
         android:layout_margin="30dp"
         />
     
-    <Button android:id="@+id/next" 
+    <Button android:id="@+id/menu" 
+        android:text="@string/next"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:paddingRight="20dp" 
+        android:paddingLeft="20dp"
+        android:layout_margin="20dp" 
+		/>
+		
+	<Button android:id="@+id/welcome" 
         android:text="@string/next"
         android:visibility="visible"
         android:layout_width="wrap_content"

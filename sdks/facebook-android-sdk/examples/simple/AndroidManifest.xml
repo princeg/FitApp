@@ -15,8 +15,7 @@
 			</intent-filter>			
 		</activity>	
 		 <activity android:name=".Welcome"></activity>
-		 <activity android:name=".Menu"></activity>
-		 <activity android:name=".MySets"></activity>	
+		 <activity android:name=".Menu"></activity>		 	
 	</application>
 	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 	<uses-sdk android:minSdkVersion="3"/>

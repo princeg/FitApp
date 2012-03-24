@@ -50,7 +50,8 @@ public class Example extends Activity {
     private TextView mText;
     private Button mPostButton;
     private Button mDeleteButton;
-    private Button mNext;
+    private Button mMenu;
+    private Button mWelcome;
 
     private Intent nextScreen;
     
@@ -72,7 +73,8 @@ public class Example extends Activity {
         mText = (TextView) Example.this.findViewById(R.id.txt);
         mPostButton = (Button) findViewById(R.id.postButton);
         mDeleteButton = (Button) findViewById(R.id.deletePostButton);
-        mNext = (Button) findViewById(R.id.next);
+        mMenu = (Button) findViewById(R.id.menu);
+        mWelcome = (Button) findViewById(R.id.welcome);
         
        	mFacebook = new Facebook(APP_ID);
        	mAsyncRunner = new AsyncFacebookRunner(mFacebook);
@@ -92,7 +94,25 @@ public class Example extends Activity {
                 View.VISIBLE :
                 View.INVISIBLE);
         
-        mNext.setOnClickListener(new View.OnClickListener() { 
+        mMenu.setOnClickListener(new View.OnClickListener() { 
+            public void onClick(View arg0) {
+                //Starting a new Intent
+                nextScreen = new Intent(getApplicationContext(), Welcome.class); 
+                //Sending data to another Activity
+                startActivity(nextScreen); 
+            }
+        });
+        
+        mMenu.setOnClickListener(new View.OnClickListener() { 
+            public void onClick(View arg0) {
+                //Starting a new Intent
+                nextScreen = new Intent(getApplicationContext(), Menu.class); 
+                //Sending data to another Activity
+                startActivity(nextScreen); 
+            }
+        });
+        
+        mWelcome.setOnClickListener(new View.OnClickListener() { 
             public void onClick(View arg0) {
                 //Starting a new Intent
                 nextScreen = new Intent(getApplicationContext(), Welcome.class); 
