@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+	android:id="@+id/widget35"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/stayfitbackground">
+
+<Button
+    android:id="@+id/widget71"
+    android:layout_width="154dp"
+    android:layout_height="wrap_content"
+    android:layout_x="90dp"
+    android:layout_y="360dp"
+    android:background="@drawable/completebutton" />
+
+<SeekBar
+    android:id="@+id/seekBar1"
+    android:layout_width="144dp"
+    android:layout_height="wrap_content"
+    android:layout_x="118dp"
+    android:layout_y="292dp" />
+
+<EditText
+    android:id="@+id/editText2"
+    android:layout_width="90dp"
+    android:layout_height="wrap_content"
+    android:layout_x="115dp"
+    android:layout_y="224dp"
+    android:inputType="time" >
+</EditText>
+
+<EditText
+    android:id="@+id/editText1"
+    android:layout_width="90dp"
+    android:layout_height="wrap_content"
+    android:layout_x="114dp"
+    android:layout_y="160dp"
+    android:inputType="numberDecimal" />
+
+<Spinner
+    android:id="@+id/spinner1"
+    android:layout_width="136dp"
+    android:layout_height="wrap_content"
+    android:layout_x="110dp"
+    android:layout_y="89dp" />
+
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_x="18dp"
+    android:layout_y="104dp"
+    android:text="Exercise"
+    android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="#696969"/>
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="83dp"
+    android:layout_height="wrap_content"
+    android:layout_x="22dp"
+    android:layout_y="172dp"
+    android:text="# Reps"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textColor="#696969" />
+
+<TextView
+    android:id="@+id/textView3"
+    android:layout_width="84dp"
+    android:layout_height="wrap_content"
+    android:layout_x="24dp"
+    android:layout_y="239dp"
+    android:text="Time"
+    android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="#696969" />
+
+<TextView
+    android:id="@+id/textView4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_x="26dp"
+    android:layout_y="296dp"
+    android:text="Pain"
+    android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="#696969" />
+
+</AbsoluteLayout>
