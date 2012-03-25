@@ -86,9 +86,9 @@ public class Example extends Activity {
                         new SampleDialogListener());
             }
         });
-        mPostButton.setVisibility(mFacebook.isSessionValid() ?
-                View.VISIBLE :
-                View.INVISIBLE);
+//        mPostButton.setVisibility(mFacebook.isSessionValid() ?
+//                View.VISIBLE :
+//                View.INVISIBLE);
         
     }
 

@@ -48,8 +48,8 @@ public final class R {
         public static final int button2=0x7f050010;
         public static final int editText1=0x7f050006;
         public static final int editText2=0x7f050005;
-        public static final int login=0x7f05000c;
-        public static final int postButton=0x7f05000e;
+        public static final int login=0x7f05000d;
+        public static final int postButton=0x7f05000c;
         public static final int seekBar1=0x7f050004;
         public static final int spinner1=0x7f050007;
         public static final int textView1=0x7f050008;
@@ -58,7 +58,7 @@ public final class R {
         public static final int textView4=0x7f05000b;
         public static final int textView5=0x7f050011;
         public static final int textView6=0x7f050012;
-        public static final int txt=0x7f05000d;
+        public static final int txt=0x7f05000e;
         public static final int webview=0x7f050001;
         public static final int widget0=0x7f050013;
         public static final int widget35=0x7f050002;
