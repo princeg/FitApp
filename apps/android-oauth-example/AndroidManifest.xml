@@ -19,6 +19,10 @@
       android:name=".ActivityMain"
       android:label="@string/app_name"
       android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
       
     </activity>
 
@@ -36,12 +40,7 @@
     </activity>
     <activity android:name="manual" android:screenOrientation="portrait" ></activity>
     <activity android:name="track" android:screenOrientation="portrait" ></activity>
-    <activity android:name="Example" android:screenOrientation="portrait" >
-        <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
+    <activity android:name="Example" android:screenOrientation="portrait" > </activity>
     <activity android:name="temp"></activity>
 
   </application>
